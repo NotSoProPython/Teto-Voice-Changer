@@ -88,13 +88,13 @@ def play(file):
 
         path = os.path.abspath(f"Assets\\{file}")
 
-        pyautogui.click(x = 1440, y = 540)
+        pyautogui.click(x = int(0.75*ScreenSize[0]), y = int(0.5*ScreenSize[1]))
         time.sleep(1)
         pyautogui.hotkey('ctrl', 'o')
         time.sleep(1)
         pyautogui.typewrite(path)
         pyautogui.press('enter')
-        time.sleep(1.5)
+        time.sleep(3)
         pyautogui.press('space')
         os.remove(path)
     
@@ -169,6 +169,7 @@ if __name__ == "__main__": # The recorder restarts python so i gotta make it not
     Root = tk.Tk()
     Root.title("Teto Voice Changer")
     Root.geometry("600x800")
+    ScreenSize = (Root.winfo_screenwidth(), Root.winfo_screenheight())
 
     Title = tk.Label(Root, text="Teto Voice Changer", font=("Monaco", 30)) # Papyrus wasn't avaliable :(
     Title.pack(pady = 20)
